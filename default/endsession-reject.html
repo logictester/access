@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.openid.endsession.reject.title}">_Logout rejected</title>
+</head>
+
+<body id="page-openid-endsession-reject">
+
+<th:block layout:fragment="page-heading">
+  <h1 th:text="#{openid.endsession.reject.header}">_Logout rejected</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <div class="row">
+    <div class="col-12">
+      <p th:utext="#{openid.endsession.reject.body}">_You're here because you clicked the Reject link.</p>
+    </div>
+  </div>
+</th:block>
+
+</body>
+</html>

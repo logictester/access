@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.forwardToAuthentication.title}"></title>
+  <th:block th:if="${not(#strings.isEmpty(forwardTo))}">
+    <meta http-equiv="refresh" th:attr="content='0; url=' + ${forwardTo}">
+    <script th:inline="javascript">
+      /*<![CDATA[*/
+      window.location.href = /*[[${forwardTo}]]*/ '';
+      /*]]>*/
+    </script>
+  </th:block>
+</head>
+<body id="forward-to-authentication">
+
+<th:block layout:fragment="page-heading">
+  <h1 th:text="#{forwardToAuthentication.title}">_Title</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <div class="row">
+    <div class="col-12">
+      <div th:utext="#{forwardToAuthentication.body(${forwardTo})}">_You are redirected</div>
+    </div>
+  </div>
+</th:block>
+</body>
+</html>

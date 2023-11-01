@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.consent.title}"></title>
+</head>
+
+<body id="page-consent">
+<th:block layout:fragment="page-heading">
+  <h1 th:text="#{consent.header(${clientName})}">_Title of the page</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <div class="row">
+    <div class="col-12">
+      <div class="consent-top">
+        <p class="salutation" th:text="#{consent.salutation(${user.attributes['firstName']})}" th:if="${user.attributes['firstName']}">Dear user,</p>
+        <p id="consent-intro" class="consent-intro" th:text="#{consent.intro(${clientName})}">Please provide consent for client X</p>
+      </div>
+
+      <div class="consent-main">
+        <p th:text="#{consent.scopes}" th:if="${requestedScopes}">Required scopes</p>
+        <ul th:if="${requestedScopeMap}">
+          <li th:remove="all">Full scope</li>
+          <li th:each="scope : ${requestedScopeMap}">
+            <p th:text="${scope.value}">Description</p>
+          </li>
+        </ul>
+      </div>
+
+      <form method="post" class="consent-form" action="authorization-complete.html" th:action="@{/consent}" id="consent-form">
+        <div class="consent-continue">
+          <input id="submit-btn" type="submit" th:value="#{consent.submit}" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</th:block>
+</body>
+</html>

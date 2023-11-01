@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:lang-xmllang="${#locale.language}">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title layout:title-pattern="$CONTENT_TITLE &mdash; $LAYOUT_TITLE" th:text="#{application.title}"></title>
+  <link th:href="@{/static/css/onegini.css(v=#{application.version})}" rel="stylesheet"/>
+</head>
+<body>
+<th:block layout:fragment="navbar-top">
+  <nav class="navbar-top">
+    <div class="container container-navbar">
+      <div class="row">
+        <div class="content col-12">
+          <div class="logo"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</th:block>
+
+<div class="container container-main">
+  <div th:if="${message} or ${remainingAttempts}" class="row">
+    <div class="col-12">
+    <th:block layout:fragment="errorMessage">
+      <div class="alert alert-danger">
+        <div class="alert-body">
+          <div class="alert-dismiss">
+            <span th:attr="aria-label=#{application.generic.close}">&times;</span>
+          </div>
+          <span th:if="${message}" th:text="#{${message}}"></span>
+          <span th:if="${remainingAttempts}" th:text="${remainingAttempts}"></span>
+        </div>
+      </div>
+    </th:block>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 heading">
+      <h1 layout:fragment="page-heading">Page heading</h1>
+    </div>
+  </div>
+
+  <div class="content">
+    <th:block layout:fragment="content"/>
+  </div>
+</div>
+
+<th:block layout:fragment="navbar-bottom">
+  <footer class="navbar-bottom">
+    <div class="container container-navbar">
+      <div class="row">
+        <div class="col-12">
+          <div class="legal">
+            <span>&#169; OneWelcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</th:block>
+<script th:src="@{/static/js/app.js(v=#{application.version})}"></script>
+<th:block layout:fragment="additions"/>
+</body>
+</html>

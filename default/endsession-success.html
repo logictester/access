@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.openid.endsession.success.title}">
+    _Title</title>
+</head>
+
+<body id="page-openid-endsession-success">
+
+<th:block layout:fragment="page-heading">
+  <h1 th:text="#{openid.endsession.success.header}">_Title</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <th:block th:if="${not #lists.isEmpty(frontChannelLogoutUris)}">
+    <iframe th:each="logoutUri: ${frontChannelLogoutUris}" th:src="${logoutUri}" class="hidden-frame" aria-hidden="true"></iframe>
+  </th:block>
+
+  <th:block th:unless="${#strings.isEmpty(postLogoutRedirectUri)}">
+    <div class="row">
+      <div class="col-12">
+        <p th:utext="#{openid.endsession.success.goToRelyingParty(${postLogoutRedirectUri})}">_Click to redirect now</p>
+      </div>
+    </div>
+    <script th:inline="javascript">
+      /*<![CDATA[*/
+      window.onload = function () {
+        window.location.href = /*[[${postLogoutRedirectUri}]]*/'';
+      }
+      /*]]>*/
+    </script>
+  </th:block>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.authorization_complete.title}"></title>
+</head>
+
+<body id="page-authorizationComplete">
+
+<th:block layout:fragment="page-heading">
+  <h1 th:unless="${error}" th:text="#{authentication.complete}">Authentication complete</h1>
+  <h1 th:if="${error}" th:text="#{authentication.complete.error}">Authentication completed with an error</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <div>
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <a th:href="${redirectUri}" th:text="#{authentication.complete.continue}" id="redirectUri" class="btn btn-primary">_Continue</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</th:block>
+<th:block layout:fragment="additions">
+  <script>
+    /*<![CDATA[*/
+    (function () {
+       window.location.href = document.getElementById('redirectUri').getAttribute("href");
+    })();
+    /*]]>*/
+  </script>
+</th:block>
+</body>
+</html>
