@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout-engine}">
+<head>
+  <title th:text="#{pages.openid.endsession.confirm.title}">_Endsession confirmation</title>
+</head>
+<body id="page-endsession-confirm">
+<th:block layout:fragment="page-heading">
+  <h1 th:text="#{openid.endsession.confirm.header}">_Confirm</h1>
+</th:block>
+
+<th:block layout:fragment="content">
+  <div class="row">
+    <div class="col-12">
+      <p th:text="#{openid.endsession.confirm.body}">_Do you want to log out?</p>
+
+      <form method="post" th:action="@{/v1/logout/accept}" id="confirm-form">
+        <input type="hidden"
+               th:name="${T(com.onewelcome.common.util.CsrfUtil).CSRF_TOKEN}"
+               th:value="${session[T(com.onewelcome.common.util.CsrfUtil).CSRF_TOKEN]}"/>
+
+        <div class="consent-continue">
+          <input type="submit" id="confirm" th:value="#{openid.endsession.confirm.accept}" class="btn btn-primary"/>
+          <a th:href="@{/v1/logout/reject}" input type="submit" id="reject" th:text="#{openid.endsession.confirm.reject}" class="btn btn-primary">_Stay logged
+            in</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</th:block>
+</body>
+</html>
