@@ -33,9 +33,9 @@
       <form method="post" class="consent-form" action="authorization-complete.html" th:action="@{/consent}" id="consent-form">
         <div class="consent-continue">
           <input id="submit-btn" type="submit" th:value="#{consent.submit}" class="btn btn-primary"/>
-      <form method="post" class="consent-form" action="endsession-success.html" th:action="@{/consent}" id="consent-form">
+      <form method="post" class="consent-form" action="endsession-success.html" th:action="@{/end-session}" id="consent-form">
         <div class="consent-decline">
-          <input id="submit-btn" type="submit" th:value="#{consent.submit}" class="btn btn-primary"/>
+          <input id="submit-btn" type="submit" th:value="#{consent.decline}" class="btn btn-primary"/>
         </div>
       </form>
     </div>
