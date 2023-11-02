@@ -39,8 +39,24 @@ a1{
     height:50px;
     background:white url(https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png) no-repeat 0 0
 }
+.navbar-dark .nav-item .nav-link {
+  color: #fff;
+}
 
+.navbar-dark .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+.fa-li {
+  position: relative;
+  left: 0;
+}
 </style>
+
+
 
 <div class="container container-main">
   <div th:if="${message} or ${remainingAttempts}" class="row">
