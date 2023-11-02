@@ -140,7 +140,7 @@ a.text-success:hover,a.text-success:focus{color:#356635;}
 .text-left{text-align:left;}
 .text-right{text-align:right;}
 .text-center{text-align:center;}
-h1,h2,h3,h4,h5,h6{margin:10px 0;font-family:inherit;font-weight:bold;line-height:20px;color:red;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;line-height:1;color:#999999;}
+h1,h2,h3,h4,h5,h6{margin:10px 0;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;line-height:1;color:#999999;}
 h1,h2,h3{line-height:40px;}
 h1{font-size:33px;}
 h2{font-size:27px;}
@@ -2588,6 +2588,21 @@ pre {
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+.checkmark-list li {
+  list-style-type: none; /* Remove default list style */
+  padding-left: 2em; /* Add space for the checkmark */
+  position: relative; /* Needed to position the pseudo element */
+}
+
+.checkmark-list li::before {
+  content: '\f00c'; /* FontAwesome checkmark icon */
+  font-family: 'FontAwesome'; /* Specify the FontAwesome font */
+  position: absolute; /* Position the icon absolutely within the li */
+  left: 0; /* Align the icon to the left */
+  top: 0; /* Align the icon to the top */
+  color: green; /* Style the icon color (if you want it green) */
+}
+
 </style>
 
 </head>
