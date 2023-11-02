@@ -27,7 +27,7 @@
         <ul class="checkmark-list" th:if="${requestedScopeMap}">
           <li th:remove="all">Full scope</li>
           <li th:each="scope : ${requestedScopeMap}">
-            <p th:text="${scope.value}">Description</p>
+            <p th:utext="Access your <strong>${scope.value}</strong>">Description</p>
           </li>
         </ul>
       </div>
