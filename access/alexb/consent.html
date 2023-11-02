@@ -21,7 +21,7 @@
       </div>
 
       <div class="consent-main">
-        <p th:text="#{consent.scopes}" th:if="${requestedScopes}">Required scopes</p>
+        <p th:text="#{consent.scopes}">Required scopes</p>
         <ul th:if="${requestedScopeMap}">
           <li th:remove="all">Full scope</li>
           <li th:each="scope : ${requestedScopeMap}">
