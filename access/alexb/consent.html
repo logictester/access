@@ -5,6 +5,8 @@
       layout:decorate="~{layouts/layout-engine}">
 <head>
   <title th:text="#{pages.consent.title}"></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-SZXxX4whmKVPENzETsHE8C78HaY/+YI4vkFenQ1HVCLrYLdTK4eRd8ABeTZPj1zb" crossorigin="anonymous">
+
 </head>
 
 <body id="page-consent">
@@ -22,7 +24,7 @@
 
       <div class="consent-main">
         <p th:text="#{consent.scopes(${clientName})}">Required scopes</p>
-        <ul th:if="${requestedScopeMap}">
+        <ul class="checkmark-list" th:if="${requestedScopeMap}">
           <li th:remove="all">Full scope</li>
           <li th:each="scope : ${requestedScopeMap}">
             <p th:text="${scope.value}">Description</p>
