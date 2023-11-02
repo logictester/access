@@ -34,9 +34,10 @@
         <div class="consent-continue">
           <input id="submit-btn" type="submit" th:value="#{consent.submit}" class="btn btn-primary"/>
         </div>
-      <form method="post" class="consent-form" action="endsession-success.html" th:href="@{./end-session}" id="consent-form">
+      <form method="post" class="consent-form" action="endsession-success.html" id="consent-form">
         <div class="consent-decline">
           <input id="submit-btn" type="submit" th:value="#{consent.decline}" class="btn btn-primary"/>
+          <a th:href="@{./end-session}">deny</a>
         </div>
       </form>
     </div>
