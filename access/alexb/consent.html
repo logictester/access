@@ -34,12 +34,10 @@
 
       <form method="post" class="consent-form" action="authorization-complete.html" th:action="@{/consent}" id="consent-form">
         <div class="consent-continue">
-          <input id="submit-btn" type="submit" th:value="#{consent.submit}" class="btn btn-primary" style="margin-right: 16px"/>
-          <a href="./v1/logout" input id="submit-btn" type="submit" th:value="#{consent.decline}" class="btn btn-danger">Decline</a>
           <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">Button</button>
-  <button class="btn btn-primary" type="button">Button</button>
-</div>
+          <button class="btn btn-primary" type="button" th:value="#{consent.submit}">Button</button>
+          <button onclick="window.location.href='./v1/logout';" class="btn btn-primary" type="button" th:value="#{consent.decline}">Button</button>
+          </div>
         </div>
       </form>
     </div>
