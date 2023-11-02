@@ -19,11 +19,11 @@
     <div class="col-12">
       <div class="consent-top">
         <p class="salutation" th:text="#{consent.salutation(${user.attributes['firstName']})}" th:if="${user.attributes['firstName']}">Dear user,</p>
-        <p id="consent-intro" class="consent-intro" th:text="#{consent.intro(${clientName})}">Please provide consent for client X</p>
+        <p id="consent-intro" class="consent-intro" th:utext="#{consent.intro(${clientName})}">Please provide consent for client X</p>
       </div>
 
       <div class="consent-main">
-        <p th:text="#{consent.scopes(${clientName})}">Required scopes</p>
+        <p th:utext="#{consent.scopes(${clientName})}">Required scopes</p>
         <ul class="checkmark-list" th:if="${requestedScopeMap}">
           <li th:remove="all">Full scope</li>
           <li th:each="scope : ${requestedScopeMap}">
