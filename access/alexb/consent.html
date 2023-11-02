@@ -36,7 +36,7 @@
         </div>
       <form method="post" class="consent-form" action="endsession-success.html" th:action="@{/v1/logout}" id="consent-form">
         <div class="consent-decline">
-          <input id="submit-btn" type="submit" th:value="#{consent.decline}" class="btn btn-primary"/>
+          <a href="./v1/logout" input id="submit-btn" type="submit" th:value="#{consent.decline}" class="btn btn-primary">Decline</a>
         </div>
       </form>
     </div>
