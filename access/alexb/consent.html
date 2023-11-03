@@ -13,7 +13,7 @@
 <th:block layout:fragment="page-heading">
   <a1 th:utext="#{consent.header(${clientName})}">_Title of the page</a1>
 </th:block>
-<hr class="custom-hr" />
+
 <th:block layout:fragment="content">
   <div class="row">
     <div class="col-12">
@@ -21,7 +21,7 @@
         <p class="salutation" th:text="#{consent.salutation(${user.attributes['firstName']})}" th:if="${user.attributes['firstName']}">Dear user,</p>
         <p id="consent-intro" class="consent-intro" th:utext="#{consent.intro(${clientName})}">Please provide consent for client X</p>
       </div>
-
+<hr class="custom-hr" />
       <div class="consent-main">
         <p th:utext="#{consent.scopes(${clientName})}">Required scopes</p>
         <ul class="checkmark-list" th:if="${requestedScopeMap}">
