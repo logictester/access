@@ -98,11 +98,15 @@ ul {
     margin-right: auto;
 }
 
+.alex-img {
+  max-width: 30%;
+}
+
 </style>
 
 <div class="alex-container">
 <div class="container">
-  <img src="https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png">
+  <img src="https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png" class="img-fluid alex-img">
   <div th:if="${message} or ${remainingAttempts}" class="row">
     <div class="col-12">
     <th:block layout:fragment="errorMessage">
