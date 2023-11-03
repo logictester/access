@@ -88,6 +88,8 @@ ul {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .alex-btn {
@@ -97,20 +99,10 @@ ul {
 }
 
 </style>
-<th:block layout:fragment="navbar-top">
-  <nav class="navbar-top">
-    <div class="container container-navbar">
-      <div class="row">
-        <div class="content col-12">
-          <div class="logo"></div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</th:block>
 
 <div class="alex-container">
 <div class="container">
+  <img src="https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png">
   <div th:if="${message} or ${remainingAttempts}" class="row">
     <div class="col-12">
     <th:block layout:fragment="errorMessage">
