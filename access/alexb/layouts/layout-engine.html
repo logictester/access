@@ -90,6 +90,7 @@ ul {
   text-align: center;
   padding-bottom: 30px;
   padding-top: 30px;
+  margin-top: 50px;
 }
 
 .alex-btn {
@@ -99,14 +100,14 @@ ul {
 }
 
 .alex-img {
-  max-width: 30%;
+  max-width: 50%;
 }
 
 </style>
 
 <div class="alex-container">
 <div class="container">
-  <img src="https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png" class="img-fluid alex-img">
+  <img src="https://sandbox-us-alex-1-deployment-lab.dev.onewelcome.io/login/ui/resources/theme/img/onewelcome-logo.png" class="img-fluid alex-img mb-4">
   <div th:if="${message} or ${remainingAttempts}" class="row">
     <div class="col-12">
     <th:block layout:fragment="errorMessage">
