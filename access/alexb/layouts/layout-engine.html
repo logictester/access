@@ -33,6 +33,11 @@ a1{
   font-size: 32px;
 
 }
+
+.alex-body {
+  background: linear-gradient(180deg, #94a3b840, #ffffff);
+}
+
 .logo {
     float:center;
     width: 200px;
@@ -78,18 +83,20 @@ ul {
 }
 
 .alex-container {
-  border: 1px solid gray;
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  width: 365px;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  margin-top: 50px;
+    border: 1px solid gray;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 365px;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #475569;
 }
 
 .alex-btn {
@@ -135,8 +142,6 @@ ul {
 </div>
 
 <th:block layout:fragment="navbar-bottom">
-  <footer class="navbar-bottom">
-    <div class="container container-navbar">
       <div class="row">
         <div class="col-12">
           <div class="legal">
@@ -144,8 +149,6 @@ ul {
           </div>
         </div>
       </div>
-    </div>
-  </footer>
 </th:block>
 <script th:src="@{/static/js/app.js(v=#{application.version})}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
