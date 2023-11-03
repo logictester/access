@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-12">
         <div class="consent-top">
-          <p class="salutation" th:text="#{consent.salutation(${user.attributes['firstName']})}" th:if="${user.attributes['firstName']}">Dear user,</p>
+          <p class="salutation" th:utext="#{consent.salutation(${user.attributes['firstName']})}" th:if="${user.attributes['firstName']}">Dear user,</p>
           <p id="consent-intro" class="consent-intro" th:utext="#{consent.intro(${clientName})}">Please provide consent for client X</p>
         </div>
   <hr class="custom-hr" />
