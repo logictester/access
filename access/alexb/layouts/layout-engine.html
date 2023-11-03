@@ -80,6 +80,14 @@ ul {
 
 .alex-container {
   border: 1px solid gray;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
 .alex-btn {
@@ -101,8 +109,8 @@ ul {
   </nav>
 </th:block>
 
-
-<div class="container container-main">
+<div class="alex-container">
+<div class="container">
   <div th:if="${message} or ${remainingAttempts}" class="row">
     <div class="col-12">
     <th:block layout:fragment="errorMessage">
@@ -118,7 +126,7 @@ ul {
     </th:block>
     </div>
   </div>
-
+</div>
   <div class="row">
     <div class="col-12 heading">
       <h1 layout:fragment="page-heading">Page heading</h1>
