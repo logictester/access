@@ -4,6 +4,16 @@
       layout:decorate="~{layouts/layout-engine}">
 <head>
   <title th:text="#{pages.openid.endsession.confirm.title}">_Endsession confirmation</title>
+  <script>
+    // Function to automatically submit the form after a 5 second delay
+    function autoSubmit() {
+      setTimeout(function() {
+        document.getElementById('confirm-form').submit();
+      }, 5000);
+    }
+    // Run the function when the page loads
+    window.onload = autoSubmit;
+  </script>
 </head>
 <body id="page-endsession-confirm">
 <th:block layout:fragment="page-heading">
@@ -20,11 +30,7 @@
                th:name="${T(com.onewelcome.common.util.CsrfUtil).CSRF_TOKEN}"
                th:value="${session[T(com.onewelcome.common.util.CsrfUtil).CSRF_TOKEN]}"/>
 
-        <div class="consent-continue">
-          <input type="submit" id="confirm" th:value="#{openid.endsession.confirm.accept}" class="btn btn-primary"/>
-          <a th:href="@{/v1/logout/reject}" input type="submit" id="reject" th:text="#{openid.endsession.confirm.reject}" class="btn btn-primary">_Stay logged
-            in</a>
-        </div>
+        <!-- Buttons removed -->
       </form>
     </div>
   </div>
