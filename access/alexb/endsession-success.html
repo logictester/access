@@ -28,7 +28,9 @@
     <script th:inline="javascript">
       /*<![CDATA[*/
       window.onload = function () {
-        window.location.href = /*[[${postLogoutRedirectUri}]]*/'';
+        setTimeout(function() {
+          window.location.href = /*[[${postLogoutRedirectUri}]]*/'';
+        }, 2000); // 2000 milliseconds = 2 seconds
       }
       /*]]>*/
     </script>
