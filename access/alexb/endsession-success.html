@@ -26,6 +26,11 @@
       </div>
     </div>
     <script th:inline="javascript">
+      function autoSubmit() {
+      setTimeout(function() {
+        document.getElementById('confirm-form').submit();
+        }, 3000);
+      }
       /*<![CDATA[*/
       window.onload = function () {
         window.location.href = /*[[${postLogoutRedirectUri}]]*/'';
